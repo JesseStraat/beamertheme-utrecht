@@ -324,15 +324,21 @@ colorlinks,
 {%
     \leavevmode%
     \hbox{%
-    \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,leftskip=2ex,sep=0pt]{date in head/foot}%
+    \begin{beamercolorbox}[
+        wd=.2\paperwidth,ht=2.25ex,dp=1ex,leftskip=2ex,sep=0pt
+    ]{date in head/foot}%
         \usebeamercolor[fg]{page number in head/foot}%
         \usebeamerfont{page number in head/foot}%
         \usebeamertemplate{page number in head/foot}%
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \begin{beamercolorbox}[
+        wd=.6\paperwidth,ht=2.25ex,dp=1ex,center
+    ]{title in head/foot}%
         \usebeamerfont{title in head/foot}\insertshorttitle
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,sep=0pt,right]{date in head/foot}%
+    \begin{beamercolorbox}[
+        wd=.2\paperwidth,ht=2.25ex,dp=1ex,sep=0pt,right
+    ]{date in head/foot}%
         \usebeamerfont{date in head/foot}%
         \insertshortdate{}\hspace*{2ex}%
     \end{beamercolorbox}%
@@ -348,11 +354,17 @@ colorlinks,
     \leavevmode%
     \hbox{%
     \usebeamerfont{section in head/foot}%
-    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,left]{section in head/foot}%
-        \usebeamerfont{headline}\usebeamerfont{section in head/foot}\hspace*{2ex}\usebeamertemplate{section in head/foot}
+    \begin{beamercolorbox}[
+        wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,left
+    ]{section in head/foot}%
+        \usebeamerfont{section in head/foot}
+        \hspace*{2ex}\usebeamertemplate{section in head/foot}
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,right]{subsection in head/foot}%
-        \usebeamerfont{headline}\usebeamerfont{subsection in head/foot}\usebeamertemplate{subsection in head/foot}\hspace*{2ex}
+    \begin{beamercolorbox}[
+        wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,right
+    ]{subsection in head/foot}%
+        \usebeamerfont{subsection in head/foot}
+        \usebeamertemplate{subsection in head/foot}\hspace*{2ex}
     \end{beamercolorbox}}%
     \vskip0pt%
 }
@@ -383,18 +395,19 @@ colorlinks,
 % the right margin. Below it is the subsection title. 
 %    \begin{macrocode}
 \defbeamertemplate{section page}{modern_box}{
-    \makebox[\textwidth][l]{\begin{minipage}{\dimexpr\textwidth+\beamer@rightmargin\relax}
-    \begin{beamercolorbox}[
-        wd=\textwidth,
-        sep=0.8em
-    ]{section title}
-        \usebeamerfont{section title}%
-        \insertsectionhead
-    \end{beamercolorbox}
-    \smash{\hskip0.8em%
-    \usebeamerfont{subsection title}%
-    \insertsubsectionhead}
-    \end{minipage}}
+    \makebox[\textwidth][l]{
+        \begin{minipage}{\dimexpr\textwidth+\beamer@rightmargin\relax}
+            \begin{beamercolorbox}[
+                wd=\textwidth,
+                sep=0.8em
+            ]{section title}
+                \usebeamerfont{section title}%
+                \insertsectionhead
+            \end{beamercolorbox}
+            \smash{\hskip0.8em%
+            \usebeamerfont{subsection title}%
+            \insertsubsectionhead}
+        \end{minipage}}
 }
 %    \end{macrocode}
 % The title page is similar to the section page. Both the title
@@ -402,17 +415,18 @@ colorlinks,
 % to the right. Below it are the author and their affiliation.
 %    \begin{macrocode}
 \defbeamertemplate{title page}{modern_box}{
-    \makebox[\textwidth][l]{\begin{minipage}{\dimexpr\textwidth+\beamer@rightmargin\relax}
-    \begin{beamercolorbox}[
-        wd=\textwidth,
-        sep=0.8em
-    ]{title}
-        \usebeamerfont{title}%
-        \inserttitle\\
-        \usebeamerfont{subtitle}%
-        \insertsubtitle
-    \end{beamercolorbox}
-    \end{minipage}}
+    \makebox[\textwidth][l]{
+        \begin{minipage}{\dimexpr\textwidth+\beamer@rightmargin\relax}
+            \begin{beamercolorbox}[
+                wd=\textwidth,
+                sep=0.8em
+            ]{title}
+                \usebeamerfont{title}%
+                \inserttitle\\
+                \usebeamerfont{subtitle}%
+                \insertsubtitle
+            \end{beamercolorbox}
+        \end{minipage}}
     \begin{beamercolorbox}[
         wd=\textwidth,
         sep=.5em,
@@ -438,7 +452,8 @@ colorlinks,
         \centering
         \begin{tikzpicture}
             \randuck[draw = white]
-            \node[anchor = south, text = white] at (1, 2.7) {\Huge\fontsize{40}{40}?};
+            \node[anchor = south, text = white]
+            at (1, 2.7) {\Huge\fontsize{40}{40}?};
         \end{tikzpicture}\\
         \textcolor{white}{Questions?}
     \end{frame}
