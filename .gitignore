@@ -19,3 +19,5 @@
 *.ilg
 *.gls
 *.ind
+*.nav
+*.snm
