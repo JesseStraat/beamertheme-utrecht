@@ -134,6 +134,7 @@ If you're using MiKTeX, open MiKTeX console, go to
     \file{beamerthemeUtrecht.sty}{\from{\jobname.dtx}{Utrecht}}
     \file{beamerouterthemeribbons.sty}{\from{\jobname.dtx}{ribbons}}
     \file{beamerthemeduckytemplates.sty}{\from{\jobname.dtx}{ducky}}
+    \file{beamercolorthemeinvertedblocks.sty}{\from{\jobname.dtx}{colortheme}}
 }
 
 \obeyspaces
@@ -240,10 +241,12 @@ colorlinks,
 % macro, which produces a question frame with a titular random duck
 % (|\randuck| from \textsf{tikzducks}). It is included due to the relative
 % popularity amongst my peers.\par
-% We use the \textsf{whale} colortheme,
-% to make it as easy as possible for the
-% user to declare their own colour of choice
-% using |\setbeamercolor{structure}{fg=...}|.
+% Our colortheme is mostly based On
+% \textsf{whale}, apart from some
+% blocks, to make it as easy as possible
+% for the user to declare their own colour
+% of choice using
+% |\setbeamercolor{structure}{fg=...}|.
 % ^^ATODO: example files for slides
 %
 %
@@ -273,7 +276,7 @@ colorlinks,
 \useoutertheme{ribbons}
 \useinnertheme{rectangles}
 \usefonttheme{professionalfonts}
-\usecolortheme{whale}
+\usecolortheme{invertedblocks}
 %    \end{macrocode}
 % Here, we load \textsf{duckytemplates}, and set its templates.
 %    \begin{macrocode}
@@ -469,5 +472,42 @@ colorlinks,
 \mode
 <all>
 %</ducky>
+%    \end{macrocode}
+%^^A
+%^^A
+%^^A
+%^^A
+% \subsection{Beamercolortheme \textsf{invertedblocks}}
+% The only purpose this theme serves is to replace
+% blocks, including example and alerted ones,
+% with ones with a solid background.
+% \setcounter{CodelineNo}{0}
+%    \begin{macrocode}
+%<*colortheme>
+%    \end{macrocode}
+% We base our colortheme on \textsf{whale}.
+%    \begin{macrocode}
+\usecolortheme{whale}
+\mode<presentation>
+%    \end{macrocode}
+% Here, we redefine the general block.
+% These include theorems.
+%    \begin{macrocode}
+\setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor{block body}{use=structure,fg=black,bg=structure.fg!20}
+
+% Alert Block
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg}
+\setbeamercolor{block body alerted}{use=alerted text,fg=black,bg=alerted text.fg!20}
+
+% Example Block
+\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg}
+\setbeamercolor{block body example}{use=example text,fg=black,bg=example text.fg!20}
+%    \end{macrocode}
+% We conclude with the standard postamble
+%    \begin{macrocode}
+\mode
+<all>
+%</colortheme>
 %    \end{macrocode}
 % \Finale
