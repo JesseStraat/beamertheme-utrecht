@@ -1,0 +1,40 @@
+name: Compile package
+on: [push]
+jobs:
+  build_package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Compile LaTeX file
+        uses: xu-cheng/texlive-action@v3
+        with:
+          run: |
+            pdflatex beamertheme-utrecht.dtx
+            makeindex -s gind.ist -o beamertheme-utrecht.ind beamertheme-utrecht.idx
+            makeindex -s gglo.ist -o beamertheme-utrecht.gls beamertheme-utrecht.glo
+            pdflatex reptheorem.dtx
+      - name: Move CTAN files into folder
+        run: |
+          mkdir ctan
+          mkdir ctan/beamertheme-utrecht
+          mv beamertheme-utrecht.dtx ctan/beamertheme-utrecht/beamertheme-utrecht.dtx
+          mv beamertheme-utrecht.ins ctan/beamertheme-utrecht/beamertheme-utrecht.ins
+          mv README.md ctan/beamertheme-utrecht/README.md
+          mv beamertheme-utrecht.pdf ctan/beamertheme-utrecht/beamertheme-utrecht-doc.pdf
+      - name: Move sty files into folder
+        run: |
+          mkdir sty
+          mv beamerthemeUtrecht.sty sty/beamerthemeUtrecht.sty
+          mv beamerouterthemeribbons.sty sty/beamerouterthemeribbons.sty
+          mv beamerthemeduckytemplates.sty sty/beamerthemeduckytemplates.sty
+      - name: Zip CTAN files
+        uses: actions/upload-artifact@v4
+        with:
+          name: CTAN-files
+          path: ctan/
+      - name: Zip sty file
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: sty/
