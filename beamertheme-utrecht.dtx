@@ -236,8 +236,8 @@ colorlinks,
 % variant of \textsf{infolines}, which uses only one colour. The
 % \textsf{duckytemplates} template file adds nice off-centered rectangular
 % section slides and the \DescribeMacro{\questionframe}|\questionframe|
-% macro, which produces a question frame with a titular random duck
-% (|\randuck| from \textsf{tikzducks}). It is included due to the relative
+% macro, which produces a question frame with a titular duck
+% (|\duck| from \textsf{tikzducks}). It is included due to the relative
 % popularity amongst my peers.\par
 % Our colortheme is mostly based On
 % \textsf{whale}, apart from some
@@ -446,17 +446,19 @@ colorlinks,
 %    \end{macrocode}
 % \begin{macro}{\questionframe}
 % Finally, we define the |\questionframe| macro. It produces a
-% fully black slide with a random duck with a question mark above
-% its head. Below it, it says ``Questions?''.
+% fully black slide with a duck (from \textsf{tikzducks}) with a question mark above
+% its head. Below it, it says ``Questions?''. By using the optional
+% parameter, one can set the optional parameters of the |\duck|. C.f.
+% the \textsf{tikzducks} documentation.
 %    \begin{macrocode}
 \RequirePackage{tikzducks}
 \RequirePackage{tikz}
-\newcommand{\questionframe}{{%
+\NewDocumentCommand{\questionframe}{ O{} }{{%
     \setbeamercolor{background canvas}{bg=black}
     \begin{frame}[noframenumbering,plain]
         \centering
         \begin{tikzpicture}
-            \randuck[draw = white]
+            \duck[#1]
             \node[anchor = south, text = white]
             at (1, 2.7) {\Huge\fontsize{40}{40}?};
         \end{tikzpicture}\\
