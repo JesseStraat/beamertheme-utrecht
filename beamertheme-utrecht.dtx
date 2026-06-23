@@ -193,7 +193,8 @@ colorlinks,
 %</driver>
 % \fi
 %
-% \GetFileInfo{\jobname.sty}
+% \def\fileversion{1.0}
+% \def\filedate{2026/06/23}
 %
 % \DoNotIndex{\begin,\end}
 %
@@ -210,12 +211,15 @@ colorlinks,
 % \maketitle
 %
 % \begin{abstract}
-%     \noindent Abstract
+%    \noindent \textsf{beamertheme-utrecht} is a modern beamertheme. It has a more
+%    minimal use of colours, and supplies templates for title slides, section slides
+%    and question slides. The main colours have been based on |structure| to make adaptation
+%    to one's own style colours easy.
 % \end{abstract}
 %
 % \tableofcontents
 %
-% \changes{v1.0}{2026/02/17}{First release}
+% \changes{v1.0}{2026/06/23}{First release}
 %
 %
 %
@@ -238,8 +242,10 @@ colorlinks,
 % section slides and the \DescribeMacro{\questionframe}|\questionframe|
 % macro, which produces a question frame with a titular duck
 % (|\duck| from \textsf{tikzducks}). It is included due to the relative
-% popularity amongst my peers.\par
-% Our colortheme is mostly based On
+% popularity amongst my peers. One can use the optional parameters to customise
+% the duck as one would in ordinary \textsf{tikzducks} (for example,
+% |\questionframe[cap=blue]| produces a duck with a blue cap).\par
+% Our colortheme is mostly based on
 % \textsf{whale}, apart from some
 % blocks, to make it as easy as possible
 % for the user to declare their own colour
@@ -495,12 +501,11 @@ colorlinks,
 %    \begin{macrocode}
 \setbeamercolor{block title}{use=structure,fg=white,bg=structure.fg}
 \setbeamercolor{block body}{use=structure,fg=black,bg=structure.fg!20}
-
-% Alert Block
+%    \end{macrocode}
+% Next, we define the other block types, being alert and example.
+%    \begin{macrocode}
 \setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg}
 \setbeamercolor{block body alerted}{use=alerted text,fg=black,bg=alerted text.fg!20}
-
-% Example Block
 \setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg}
 \setbeamercolor{block body example}{use=example text,fg=black,bg=example text.fg!20}
 %    \end{macrocode}
