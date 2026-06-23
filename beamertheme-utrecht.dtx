@@ -251,7 +251,38 @@ colorlinks,
 % for the user to declare their own colour
 % of choice using
 % |\setbeamercolor{structure}{fg=...}|.
-% ^^ATODO: example files for slides
+%^^A
+% \subsection{Example document}
+% Below is an example document. We change the style colour to violet, and the
+% questions duck is made to look like santa claus.
+% \begin{verbatim}
+% \documentclass{beamer}
+% \usetheme{Utrecht}
+% \setbeamercolor{structure}{fg=violet}
+
+% \title{A title}
+% \subtitle{A subtitle}
+% \author{John Doe}
+% \institute{Smith University}
+
+% \begin{document}
+% \begin{frame}
+%     \maketitle
+% \end{frame}
+% \section{A section}
+% \subsection{A subsection}
+% \begin{frame}{Frame title}
+%     This is a frame.
+%     \begin{exampleblock}{Example}
+%         Example block.
+%     \end{exampleblock}
+%     \begin{alertblock}{Alert!}
+%         Alert block.
+%     \end{alertblock}
+% \end{frame}
+% \questionframe[santa,beard=white]
+% \end{document}
+% \end{verbatim}
 %
 %
 %
