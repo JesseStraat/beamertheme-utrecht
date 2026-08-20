@@ -302,8 +302,7 @@ colorlinks,
 \beamertemplatenavigationsymbolsempty
 %    \end{macrocode}
 % Loading the themes that make up |Utrecht|. We deliberately use
-% \textsf{whale} for ease of changing the theme for specific
-% institutions later.
+% \textsf{whale} for ease of changing the theme later.
 %    \begin{macrocode}
 \useoutertheme{ribbons}
 \useinnertheme{rectangles}
@@ -349,6 +348,7 @@ colorlinks,
 %    \begin{macrocode}
 \setbeamercolor*{title in head/foot}{parent=palette primary}
 \setbeamercolor*{date in head/foot}{parent=palette primary}
+\setbeamercolor*{page number in head/foot}{parent=palette primary}
 \setbeamercolor*{section in head/foot}{parent=palette quaternary}
 \setbeamercolor*{subsection in head/foot}{parent=palette quaternary}
 %    \end{macrocode}
@@ -365,7 +365,7 @@ colorlinks,
     \hbox{%
     \begin{beamercolorbox}[
         wd=.2\paperwidth,ht=2.25ex,dp=1ex,leftskip=2ex,sep=0pt
-    ]{date in head/foot}%
+    ]{page number in head/foot}%
         \usebeamercolor[fg]{page number in head/foot}%
         \usebeamerfont{page number in head/foot}%
         \usebeamertemplate{page number in head/foot}%
