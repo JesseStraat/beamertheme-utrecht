@@ -234,12 +234,13 @@ colorlinks,
 % styles included in this package.\par
 % The main goal of \textsf{beamertheme-utrecht} is to provide a general
 % modern beamertheme. The outertheme \textsf{ribbons} adds a more minimal
-% variant of \textsf{infolines}, which uses only one colour. The
-% \textsf{duckytemplates} template file adds nice off-centered rectangular
+% variant of \textsf{infolines} which uses only one colour. The
+% \textsf{duckytemplates} template file adds nice off-centred rectangular
 % section slides and the \DescribeMacro{\questionframe}|\questionframe|
 % macro, which produces a question frame with a titular duck
-% (|\duck| from \textsf{tikzducks}). It is included due to the relative
-% popularity amongst my peers. One can use the optional parameters to customise
+% (|\duck| from \textsf{tikzducks}). Usage of the duck question frame is,
+% of course, optional (and perhaps discouraged in very formal settings).
+% One can use the optional parameters to customise
 % the duck as one would in ordinary \textsf{tikzducks} (for example,
 % |\questionframe[cap=blue]| produces a duck with a blue cap).\par
 % Our colortheme is mostly based on
@@ -249,7 +250,9 @@ colorlinks,
 % of choice using
 % |\setbeamercolor{structure}{fg=...}|. In particular, \textsf{beamertheme-utrecht}
 % is compatible with the package \textsf{brandstyler}, for easy adaptation of
-% organisation style into the presentation.
+% organisation style into the presentation.\par
+% By default, navigation symbols are disabled. One can enable
+% them using |\setbeamertemplate{navigation symbols}[default]|.
 %^^A
 % \subsection{Example document}
 % Below is an example document. We change the style colour to violet, and the
@@ -303,8 +306,7 @@ colorlinks,
 %    \begin{macrocode}
 \beamertemplatenavigationsymbolsempty
 %    \end{macrocode}
-% Loading the themes that make up |Utrecht|. We deliberately use
-% \textsf{whale} for ease of changing the theme later.
+% Loading the themes that make up |Utrecht|.
 %    \begin{macrocode}
 \useoutertheme{ribbons}
 \useinnertheme{rectangles}
@@ -343,7 +345,8 @@ colorlinks,
 %<*ribbons>
 \mode<presentation>
 %    \end{macrocode}
-% We set up the colours. The title, date, etc. should all be
+% We set up the colours for the outer theme.
+% The title, date, etc. should all be
 % in |palette primary| (usually the default palette colour).
 % The section and subsection boxes are set to
 %  |palette quaternary| (usually black).
@@ -516,12 +519,14 @@ colorlinks,
 % \subsection{Beamercolortheme \textsf{invertedblocks}}
 % The only purpose this theme serves is to replace
 % blocks, including example and alerted ones,
-% with ones with a solid background.
+% with ones with a solid background. Other than that,
+% the theme is just \textsf{whale}.
 % \setcounter{CodelineNo}{0}
 %    \begin{macrocode}
 %<*colortheme>
 %    \end{macrocode}
-% We base our colortheme on \textsf{whale}.
+% We base our colortheme on \textsf{whale} for ease of
+% changing the colour theme later.
 %    \begin{macrocode}
 \usecolortheme{whale}
 \mode<presentation>
