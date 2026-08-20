@@ -1,0 +1,118 @@
+\documentclass{beamer}
+
+\usetheme{Utrecht}
+
+\usepackage{amsmath, amssymb}
+
+\title{\textsf{beamertheme-utrecht}}
+\subtitle{A modern colour-agnostic beamertheme with lots of rectangles}
+\author{John Doe}
+\institute{\LaTeX{} University}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\section{Basic slide typography}
+
+\begin{frame}{An Average Slide}
+    This is just your average slide without anything extraordinary. This text is deliberately very long so you can see what the margins look like. After all, they are slightly smaller than by default.\\~\\
+    Have you noticed that the navigation symbols are gone? You can reinstate them using \texttt{\textbackslash setbeamertemplate\{navigation symbols\}[default]}.\\~\\
+    The default colour is blue (the default colour of most beamerthemes). To change the theme colour, use \texttt{\textbackslash setbeamercolor\{structure\}\{fg=...\}}.
+\end{frame}
+
+\begingroup
+\setbeamercolor{structure}{fg=orange}
+\begin{frame}{A colour test}
+    On this slide, we have temporarily set the \texttt{structure} colour to \texttt{orange}:\\
+    \texttt{\textbackslash setbeamercolor\{structure\}\{fg=orange\}}\\
+    The change was made temporary using \texttt{\textbackslash begingroup} and \texttt{\textbackslash endgroup}.
+\end{frame}
+\endgroup
+
+\begin{frame}[plain]{\texttt{plain} Frame}
+    This frame uses the \texttt{plain} option. This gets rid of the header and footer (it preserves the frame title if set, as it should).
+\end{frame}
+
+\begin{frame}{Blocks}
+    \begin{block}{Block Test}
+        This is a standard block environment. The header will be the \texttt{structure} colour, and the main body is a lightened version of the same colour.
+    \end{block}
+    %
+    \begin{alertblock}{Alert Test}
+        This is an alert block.
+    \end{alertblock}
+    %
+    \begin{exampleblock}{Example Test}
+        This is an example block.
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Itemize and Enumerate}
+    Here is an example of (embedded) \texttt{enumerate}s and \texttt{itemize}s, and how the font scales.
+    \begin{enumerate}
+        \item First-level item.
+        \begin{enumerate}
+            \item Second-level item.
+            \item Another second-level item.
+            \begin{itemize}
+                \item Third-level item (in \texttt{itemize}).
+            \end{itemize}
+        \end{enumerate}
+        \item Another first-level item.
+    \end{enumerate}
+\end{frame}
+
+\section{Mathematics and Theorems}
+
+\begin{frame}{Mathematics and Theorems}
+    We use this section to showcase maths mode and theorems, but we urge the reader to pay special attention to the sections and subsections. Please keep an eye on the header (the black bar on top) to see how it changes as we go through the (sub)sections.\\~\\
+    After this section, we will end the presentation with a \texttt{\textbackslash questionframe[cap=blue]}.
+\end{frame}
+
+\subsection{Mathematics}
+
+\begin{frame}{Inline and Display Math}
+    Inline maths: \(\sum_{i=1}^n i = \frac{n(n+1)}{2}\).\\~\\
+    Display maths:
+    \[
+        \partial_t x = X_H(x(t)).
+    \]~\\
+    Numbered equation:
+    \begin{equation}
+        \int_M\mathrm{d}\omega = \int_{\partial M}\omega.
+        \label{eq:stokes}
+    \end{equation}
+    Equation \eqref{eq:stokes} is also known as the generalised Stokes's theorem, or the Stokes--Cartan theorem. This is an example of cross-referencing.
+\end{frame}
+
+\subsection{Theorems}
+
+\begin{frame}{Theorem Environments}
+    \begin{theorem}[Freyd--Mitchell embedding theorem]
+        All small Abelian categories are full subcategories of a category of modules over some ring such that the embedding is exact.
+    \end{theorem}
+    %
+    \begin{lemma}[Yoneda]
+        For \(F\colon \mathcal{C}^\mathrm{op}\to \mathbf{Set}\) a functor, \(\operatorname{Hom}_{[\mathcal{C}^\mathrm{op},\mathbf{Set}]}(YA, F) \cong F(A)\) for all objects \(A\) in \(\mathcal{C}\).
+    \end{lemma}
+    %
+    \begin{proof}
+        Yoneda's lemma is tautological, completing the proof.
+    \end{proof}
+    %
+    \begin{definition}
+        A \emph{monad} is a monoid in the category of endofunctors.
+    \end{definition}
+\end{frame}
+
+\questionframe[cap=blue]
+
+\end{document}   

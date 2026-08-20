@@ -13,6 +13,7 @@ jobs:
             pdflatex beamertheme-utrecht.dtx
             makeindex -s gglo.ist -o beamertheme-utrecht.gls beamertheme-utrecht.glo
             pdflatex beamertheme-utrecht.dtx
+            pdflatex beamertheme-utrecht-demo.tex
       - name: Move CTAN files into folder
         run: |
           mkdir ctan
@@ -21,6 +22,8 @@ jobs:
           mv beamertheme-utrecht.ins ctan/beamertheme-utrecht/beamertheme-utrecht.ins
           mv README.md ctan/beamertheme-utrecht/README.md
           mv beamertheme-utrecht.pdf ctan/beamertheme-utrecht/beamertheme-utrecht-doc.pdf
+          mv beamertheme-utrecht-demo.tex ctan/beamertheme-utrecht/beamertheme-utrecht-demo.tex
+          mv beamertheme-utrecht-demo.pdf ctan/beamertheme-utrecht/beamertheme-utrecht-demo.pdf
       - name: Move sty files into folder
         run: |
           mkdir sty
