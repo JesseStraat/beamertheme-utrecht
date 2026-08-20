@@ -14,6 +14,7 @@ jobs:
             makeindex -s gglo.ist -o beamertheme-utrecht.gls beamertheme-utrecht.glo
             pdflatex beamertheme-utrecht.dtx
             pdflatex beamertheme-utrecht-demo.tex
+            pdflatex beamertheme-utrecht-demo.tex
       - name: Move CTAN files into folder
         run: |
           mkdir ctan
