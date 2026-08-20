@@ -27,7 +27,6 @@
 %
 % Documentation:
 % 		  pdflatex beamertheme-utrecht.dtx
-%       makeindex -s gind.ist -o beamertheme-utrecht.ind beamertheme-utrecht.idx
 %       makeindex -s gglo.ist -o beamertheme-utrecht.gls beamertheme-utrecht.glo
 %       pdflatex beamertheme-utrecht.dtx
 %
@@ -56,7 +55,6 @@ Move `.sty` and `.cls` files to a folder that TeX can find.
 Run the following in the command line:
 ```
 pdflatex beamertheme-utrecht.dtx
-makeindex -s gind.ist -o beamertheme-utrecht.ind beamertheme-utrecht.idx
 makeindex -s gglo.ist -o beamertheme-utrecht.gls beamertheme-utrecht.glo
 pdflatex beamertheme-utrecht.dtx
 ```
@@ -188,7 +186,6 @@ hyperindex=false,
 colorlinks,
 ]{hyperref}
 \EnableCrossrefs
-\CodelineIndex
 \RecordChanges
 \begin{document}
   \DocInput{\jobname.dtx}
@@ -198,8 +195,6 @@ colorlinks,
 %
 % \def\fileversion{1.0}
 % \def\filedate{2026/06/23}
-%
-% \DoNotIndex{\begin,\end}
 %
 % \title{^^A
 %     beamertheme-utrecht\thanks{^^A
@@ -229,7 +224,6 @@ colorlinks,
 %\StopEventually{^^A
 %  \clearpage
 %  \PrintChanges
-%  \PrintIndex
 %}
 %
 %
